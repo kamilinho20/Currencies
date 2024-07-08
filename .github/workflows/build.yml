@@ -29,7 +29,7 @@ jobs:
 
       - name: Run unit tests
         run: |
-          dotnet test Currencies.sln --collect:"XPlat Code Coverage" --logger trx --results-directory ./TestResults
+          dotnet test Currencies.sln /p:ExcludeByFile="**/*Migrations/*.cs" --collect:"XPlat Code Coverage" --logger trx --results-directory ./TestResults
           
       - name: Publish test results
         uses: actions/upload-artifact@v3
