@@ -1,0 +1,14 @@
+@Currencies.Server_HostAddress = http://localhost:5198
+
+GET {{Currencies.Server_HostAddress}}/api/Currency/GetAll
+Accept: application/json
+
+###
+
+GET {{Currencies.Server_HostAddress}}/api/Currency/GetExchanges?dateFrom=2024-07-01&dateTo={{$datetime "yyyy-MM-dd"}}&currencyCode=eur
+Accept: application/json
+
+###
+
+GET {{Currencies.Server_HostAddress}}/api/Currency/GetLast
+Accept: application/json
