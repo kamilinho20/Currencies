@@ -108,7 +108,7 @@ public class CurrencyControllerTests
         var result = await _controller.GetAll();
 
         // Assert
-        var okResult = Assert.IsType<OkObjectResult>(result);
+        var okResult = Assert.IsType<OkObjectResult>(result.Result);
         var returnCurrencies = Assert.IsType<List<Currency>>(okResult.Value);
         Assert.Equal(2, returnCurrencies.Count);
     }
